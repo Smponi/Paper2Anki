@@ -40,4 +40,3 @@ So each of your page should look like this:
 - Icon in logo: https://www.flaticon.com/free-icon/script_708922
 - genanki (library to create anki cards in python): https://github.com/kerrickstaley/genanki
 - pdfrw great pdf library: https://pypi.org/project/pdfrw/
-- pdf2image: https://pypi.org/project/pdf2image/
