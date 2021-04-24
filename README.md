@@ -24,11 +24,11 @@ So each of your page should look like this:
 
 - Make sure you have **python3** installed.
 - Run `pip install -r requirements.txt`  
-   to install the packages reqiured to run the script.
+   to install the packages required to run the script.
 
 ## Usage
 
-1. Run `python PdfCutter.py YOURFILE.PDF NAME`  
+1. Run `python paper2anki.py YOURFILE.PDF NAME`  
    So you give the program 2 Arguments:
    1. The PDF file which contains the flash cards
    2. The name you wish the deck to have.

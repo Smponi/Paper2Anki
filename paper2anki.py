@@ -37,7 +37,7 @@ def createImages():
     for x in doc:
         pix = x.get_pixmap(alpha=False,matrix=mat)
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-        img.save("%s%i.jpg" %(TEMP+os.sep,x.number))
+        img.save("%s%s.jpg" %(TEMP+os.sep,format(x.number, '04d')))
         #pix.writePNG("%i.png" % x.number)
         
 def renameFiles():
