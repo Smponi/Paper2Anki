@@ -1,11 +1,10 @@
 from AnkiCreator import createAPKG
 import sys,shutil
 import os,glob
-import math
 import re
 from pdfrw import PdfReader, PdfWriter, PageMerge
-from pdf2image import convert_from_path
-
+import fitz
+from PIL import Image
 
 
 TEMP = "Temp"
@@ -28,17 +27,25 @@ def createPDF(pdf):
     writer = PdfWriter()
     for page in PdfReader(pdf).pages:
         writer.addpages(splitpage(page))
-    writer.write(TEMP+"/input.pdf")
+    writer.write(TEMP+os.sep+"input.pdf")
 
 def createImages():
-    threadCount = math.ceil(os.cpu_count()/3)
-    convert_from_path(TEMP+"/input.pdf", output_folder=TEMP,fmt="jpeg",thread_count=threadCount)
+    zoom_x = 2.0  # horizontal zoom
+    zomm_y = 2.0  # vertical zoom
+    mat = fitz.Matrix(zoom_x, zomm_y)  # zoom factor 2 in each dimension
+    doc = fitz.open(TEMP+os.sep+"input.pdf")
+    for x in doc:
+        pix = x.get_pixmap(alpha=False,matrix=mat)
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        img.save("%s%i.jpg" %(TEMP+os.sep,x.number))
+        #pix.writePNG("%i.png" % x.number)
+        
 def renameFiles():
     regex = r"[0-9]+\.jpg"
-    filelist = glob.glob('Temp/*.jpg')
+    filelist = glob.glob('Temp'+os.sep+'*.jpg')
     for filename in filelist:
         x = re.search(regex,filename)
-        os.rename(str(filename),"Temp/"+x.group())    
+        os.rename(str(filename),"Temp"+os.sep++x.group())    
 def removeTemp():
     try:
         shutil.rmtree(TEMP)
@@ -50,6 +57,6 @@ if __name__ == '__main__':
     name = sys.argv[2]
     createPDF(pdf)
     createImages()
-    renameFiles()
+    #renameFiles()
     createAPKG(name)
     removeTemp()

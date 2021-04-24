@@ -3,3 +3,4 @@ Temp/
 *.jpg
 *.apkg
 *.pdf
+__pycache__/

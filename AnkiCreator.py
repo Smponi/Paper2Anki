@@ -34,5 +34,5 @@ def createAPKG(name):
     count=count+2
   my_package = genanki.Package(my_deck)
   for x in filelist:
-    my_package.media_files.append('Temp/'+x)
+    my_package.media_files.append('Temp'+os.sep+x)
   my_package.write_to_file('%s.apkg' % name)
