@@ -30,14 +30,6 @@ Then you just need to export your document as a pdf.
 2. Import the .apkg file into Anki
 3. Study
 
-## TODOS:
-
-- [ ] compress the pictures better, so the deck don't need so much space
-- [ ] Make Code a bit cleaner
-- [ ] Website? Like notion2anki
-- [ ] Example
-- [ ] Opensource License.
-
 ## Credits:
 
 - Icon in logo: https://www.flaticon.com/free-icon/script_708922
