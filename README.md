@@ -19,6 +19,7 @@ So each of your page should look like this:
 <p align="right">
 <img width=150  src="templatepaper.png">
 </p>
+
 ## Requirements
 
 - Make sure you have **python3** installed.
