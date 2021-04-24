@@ -1,5 +1,7 @@
 ![PAPER2ANKI](logo.png)
+
 ## Introduction
+
 Paper2Anki is your way to **write** your flashcards. Goodnotes 5 released a gamechanger in my opinion. You just write your flashcards,and you can study with them.
 However, I don't like the idea of only learning in Goodnotes and their algorithm needs some work imo.
 So I decided to create a way to make flashcards in Goodnotes (Or any other notes app) and export them to Anki!
@@ -30,3 +32,7 @@ Then you just need to export your document as a pdf.
 - [ ] Credits
 - [ ] Example
 - [ ] Opensource License.
+
+## Credits:
+
+- Icon in logo: https://www.flaticon.com/free-icon/script_708922
