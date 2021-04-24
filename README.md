@@ -28,6 +28,17 @@ So each of your page should look like this:
 
 ## Usage
 
+This script is run within the terminal. 
+### Windows
+For Windows type _cmd_ in the search bar and then just follow the steps.
+### Linux
+You should know what the terminal is.
+
+### MacOS
+Open spotlight and search there for Terminal and then just follow the steps.
+
+### Use
+
 1. Run `python paper2anki.py YOURFILE.PDF NAME`  
    So you give the program 2 Arguments:
    1. The PDF file which contains the flash cards
