@@ -1,6 +1,7 @@
 from AnkiCreator import createAPKG
-import sys
+import sys,shutil
 import os,glob
+import math
 import re
 from pdfrw import PdfReader, PdfWriter, PageMerge
 from pdf2image import convert_from_path
@@ -30,14 +31,19 @@ def createPDF(pdf):
     writer.write(TEMP+"/input.pdf")
 
 def createImages():
-    convert_from_path(TEMP+"/input.pdf", output_folder=TEMP,fmt="jpeg",thread_count=os.cpu_count())
+    threadCount = math.ceil(os.cpu_count()/3)
+    convert_from_path(TEMP+"/input.pdf", output_folder=TEMP,fmt="jpeg",thread_count=threadCount)
 def renameFiles():
     regex = r"[0-9]+\.jpg"
     filelist = glob.glob('Temp/*.jpg')
     for filename in filelist:
         x = re.search(regex,filename)
         os.rename(str(filename),"Temp/"+x.group())    
-
+def removeTemp():
+    try:
+        shutil.rmtree(TEMP)
+    except OSError as e:
+        print("Error: %s : %s" % (TEMP, e.strerror))
 
 if __name__ == '__main__':
     pdf = sys.argv[1]
@@ -46,3 +52,4 @@ if __name__ == '__main__':
     createImages()
     renameFiles()
     createAPKG(name)
+    removeTemp()
