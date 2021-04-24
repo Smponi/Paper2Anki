@@ -14,7 +14,11 @@ It's just as simple as writing!
 You just write on each page your Question on the top half of the page
 and the answer on the bottom part.
 Then you just need to export your document as a pdf.
+So each of your page should look like this:
 
+<p align="right">
+<img width=150  src="templatepaper.png">
+</p>
 ## Requirements
 
 - Make sure you have **python3** installed.
