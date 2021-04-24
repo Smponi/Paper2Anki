@@ -15,26 +15,32 @@ You just write on each page your Question on the top half of the page
 and the answer on the bottom part.
 Then you just need to export your document as a pdf.
 
+## Requirements
+
+- Make sure you have **python3** installed.
+- Run `pip install -r requirements.txt`  
+   to install the packages reqiured to run the script.
+
 ## Usage
 
-1. Make sure you have **python3** installed.
-2. Run `pip install -r requirements.txt`  
-   to install the packages reqiured to run the script.
-3. Run `python PdfCutter.py YOURFILE.PDF NAME`  
+1. Run `python PdfCutter.py YOURFILE.PDF NAME`  
    So you give the program 2 Arguments:
    1. The PDF file which contains the flash cards
    2. The name you wish the deck to have.
-4. Import the .apkg file into Anki
+2. Import the .apkg file into Anki
+3. Study
 
 ## TODOS:
 
 - [ ] compress the pictures better, so the deck don't need so much space
 - [ ] Make Code a bit cleaner
 - [ ] Website? Like notion2anki
-- [ ] Credits
 - [ ] Example
 - [ ] Opensource License.
 
 ## Credits:
 
 - Icon in logo: https://www.flaticon.com/free-icon/script_708922
+- genanki (library to create anki cards in python): https://github.com/kerrickstaley/genanki
+- pdfrw great pdf library: https://pypi.org/project/pdfrw/
+- pdf2image: https://pypi.org/project/pdf2image/
