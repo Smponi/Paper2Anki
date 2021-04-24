@@ -1,4 +1,6 @@
-![PAPER2ANKI](logo.png)
+<p align="center">
+  <img src="logo.png">
+</p>
 
 ## Introduction
 
