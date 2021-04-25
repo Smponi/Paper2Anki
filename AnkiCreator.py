@@ -3,8 +3,9 @@ import os
 import random
 
 def createAPKG(name):
+  MODELID = random.randrange(1 << 30, 1 << 31)
   my_model = genanki.Model(
-  1380120064,
+  MODELID,
   'Example',
   fields=[
     {'name': 'Question'},
@@ -17,7 +18,7 @@ def createAPKG(name):
       'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
     },
   ])
-  deckId = random.randint(1000000000,9900000000)
+  deckId = random.randrange(1 << 30, 1 << 31)
   my_deck = genanki.Deck(
     deckId,
     name)
