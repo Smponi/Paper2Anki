@@ -4,3 +4,4 @@ Temp/
 *.apkg
 *.pdf
 __pycache__/
+.idea/
