@@ -3,7 +3,7 @@ import os
 import random
 
 
-def createAPKG(name):
+def create_apkg(name):
     MODELID = random.randrange(1 << 30, 1 << 31)
     my_model = genanki.Model(
         MODELID,
@@ -26,7 +26,6 @@ def createAPKG(name):
     count = 0
     filelist = sorted(os.listdir(DIRECTORY))
     filelist.remove("input.pdf")
-    # print(filelist)
     while count < len(filelist):
         field1 = '<img src="%s"\\>' % (filelist[count])
         field2 = '<img src="%s"\\>' % (filelist[count + 1])
