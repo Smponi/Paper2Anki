@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png">
+  <img src="assets/logo.png">
 </p>
 
 ## Introduction
@@ -17,7 +17,7 @@ Then you just need to export your document as a pdf.
 So each of your page should look like this:
 
 <p align="right">
-<img width=150  src="templatepaper.png">
+<img width=150  src="assets/templatepaper.png">
 </p>
 
 ## Requirements
@@ -28,13 +28,18 @@ So each of your page should look like this:
 
 ## Usage
 
-This script is run within the terminal. 
+This script is run within the terminal.
+
 ### Windows
+
 For Windows type _cmd_ in the search bar and then just follow the steps.
+
 ### Linux
+
 You should know what the terminal is.
 
 ### MacOS
+
 Open spotlight and search there for Terminal and then just follow the steps.
 
 ### Use
