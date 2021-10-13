@@ -1,17 +1,15 @@
-from Converter import Converter
-from AnkiCreator import create_apkg
-from os import unlink
 import shutil
-from tempfile import template
-from fastapi import FastAPI, File, UploadFile, HTTPException
-from fastapi.param_functions import Form
-from fastapi.responses import HTMLResponse
-from pydantic.fields import Field
 from pathlib import Path
 from typing import Callable
+
+from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
+
+from AnkiCreator import create_apkg
+from Converter import Converter
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="../static"), name="static")
@@ -52,6 +50,7 @@ def handle_upload_file(
     finally:
         # Delete the tempfile
         tmp_path.unlink()
+
 
 # def handler(
 #    pdf: Path
