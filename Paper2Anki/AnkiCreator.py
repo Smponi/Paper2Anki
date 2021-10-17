@@ -1,6 +1,7 @@
-import genanki
 import os
 import random
+
+import genanki
 
 
 def create_apkg(name):
@@ -35,4 +36,7 @@ def create_apkg(name):
     my_package = genanki.Package(my_deck)
     for x in filelist:
         my_package.media_files.append("Temp" + os.sep + x)
-    my_package.write_to_file("%s.apkg" % name)
+    anki_deck_name = "%s.apkg" % name
+    my_package.write_to_file(anki_deck_name)
+    print(anki_deck_name)
+    return anki_deck_name

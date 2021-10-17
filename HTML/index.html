@@ -4,12 +4,9 @@
     <script src="{{ url_for('static', path='checker.js') }}"></script>
   </head>
 
-    <form action="/pdf" method="post" id="send-file-form"  enctype="multipart/form-data">
-      <input id="uploadedFile" type="file" name="pdf_file" />
-      <input type="submit" />
-    </form>
-    <form action="/pdf" method="post" enctype="multipart/form-data">
-      <input type="file" name="pdf_file" />
+    <form  action="/pdf" method="post" id="send-file-form" enctype="multipart/form-data" >
+      <input id="anki" type="text" name="anki_name" value="test"/>
+      <input id="uploadedFile" type="file" name="pdf_file"  />
       <input type="submit" />
     </form>
   </body>

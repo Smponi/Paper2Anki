@@ -1,5 +1,5 @@
 //First number is size in mB
-const MAX_FILE_SIZE = 1.2 * 1024 * 1024;
+const MAX_FILE_SIZE = 200 * 1024 * 1024;
 
 window.onload = function () {
   const uploadForm = document.getElementById("send-file-form");

@@ -1,5 +1,7 @@
 pdfrw==0.4
 loguru==0.5.3
-genanki
+genanki~=0.11.0
+pillow~=8.3.2
+fastapi~=0.70.0
+starlette~=0.16.0
 pymupdf
-pillow

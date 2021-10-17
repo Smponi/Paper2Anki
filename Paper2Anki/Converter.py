@@ -53,7 +53,7 @@ class Converter:
             img.save(img_name)
         logger.debug("Created images of: ")
 
-    def renameFiles(self):
+    def rename_files(self):
         logger.debug("Renaming files")
         regex = r"[0-9]+\.jpg"
         filelist = glob.glob("Temp" + os.sep + "*.jpg")

@@ -2,11 +2,12 @@ import shutil
 from pathlib import Path
 from typing import Callable
 
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
+from starlette.responses import FileResponse
 
 from AnkiCreator import create_apkg
 from Converter import Converter
@@ -21,23 +22,28 @@ async def display_page(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post("/pdf")
-async def upload(pdf_file: UploadFile = File(...)) -> None:
+@app.post("/pdf", response_class=FileResponse)
+async def upload(
+    anki_name: str = Form(...), pdf_file: UploadFile = File(...)
+) -> FileResponse:
+    path = None
     try:
         if pdf_file.content_type != "application/pdf":
             raise HTTPException(400, detail="Invalid document type")
         with open(f"{pdf_file.filename}", "wb") as buffer:
             shutil.copyfileobj(pdf_file.file, buffer)
-        convert_file(pdf_file.filename)
+        path = convert_file(pdf_file.filename, anki_name)
     finally:
         pdf_file.file.close()
+    return FileResponse(Path(path), media_type="apkg", filename=path)
 
 
-def convert_file(pdf_file):
-    converter = Converter(pdf_file, "in1")
+def convert_file(pdf_file, anki_name: str):
+    converter = Converter(pdf_file, anki_name)
     converter.convert()
-    create_apkg("in1")
+    name = create_apkg(anki_name)
     converter.remove_temp()
+    return name
 
 
 def handle_upload_file(
