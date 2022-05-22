@@ -5,3 +5,4 @@ pillow~=8.3.2
 fastapi~=0.70.0
 starlette~=0.16.0
 pymupdf
+requests

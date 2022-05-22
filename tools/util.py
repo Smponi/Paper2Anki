@@ -7,3 +7,4 @@ def get_log_name() -> Path:
     today = dt.date.today()
     filename = f"{today.day:2d}-{today.month:2d}-{today.year}.log"
     return log_root.joinpath(filename)
+

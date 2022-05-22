@@ -28,6 +28,7 @@ async def upload(
 ) -> FileResponse:
     path = None
     try:
+        # Check if file is correct file type
         if pdf_file.content_type != "application/pdf":
             raise HTTPException(400, detail="Invalid document type")
         with open(f"{pdf_file.filename}", "wb") as buffer:
@@ -38,7 +39,7 @@ async def upload(
     return FileResponse(Path(path), media_type="apkg", filename=path)
 
 
-def convert_file(pdf_file, anki_name: str):
+def convert_file(pdf_file, anki_name: str) -> str   :
     converter = Converter(pdf_file, anki_name)
     converter.convert()
     name = create_apkg(anki_name)
