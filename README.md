@@ -2,6 +2,10 @@
   <img src="logo.png">
 </p>
 
+
+<h2 align="center">
+Finally with Apple silicon support!</h2>
+
 ## Introduction
 
 Paper2Anki is your way to **write** your flashcards. Goodnotes 5 released a gamechanger in my opinion. You just write your flashcards,and you can study with them.
@@ -44,6 +48,7 @@ So each of your page should look like this:
 - Make sure you have **python3** installed.
 - Run `pip install -r requirements.txt`
    to install the packages required to run the script.
+- **IMPORTANT**: If you want to use it on MacOS, make sure you have an uptodate pip version!
 
 ## Usage
 
