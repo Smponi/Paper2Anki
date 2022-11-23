@@ -1,4 +1,4 @@
 pdfrw==0.4
 genanki
-pymupdf
+pymupdf==1.21.0
 pillow
