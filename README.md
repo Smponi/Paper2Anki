@@ -2,6 +2,7 @@
   <img src="logo.png">
 </p>
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c44e9b5b01144bad817b788fc068da91)](https://www.codacy.com/gh/Smponi/Paper2Anki/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Smponi/Paper2Anki&amp;utm_campaign=Badge_Grade)
 
 <h2 align="center">
 Finally with Apple silicon support!</h2>
@@ -45,10 +46,12 @@ So each of your page should look like this:
 
 ## Requirements
 
-- Make sure you have **python3** installed.
-- Run `pip install -r requirements.txt`
+  - Make sure you have **python3.7 or later** installed.
+  
+  - Run `pip install -r requirements.txt`
    to install the packages required to run the script.
-- **IMPORTANT**: If you want to use it on MacOS, make sure you have an uptodate pip version!
+  
+  - **IMPORTANT**: If you want to use it on MacOS, make sure you have an uptodate pip version!
 
 ## Usage
 
@@ -63,15 +66,15 @@ Open spotlight and search there for Terminal and then just follow the steps.
 
 ### Use
 
-1. Run `python paper2anki.py YOURFILE.PDF NAME`
+ 1. Run `python paper2anki.py YOURFILE.PDF NAME`
    So you give the program 2 Arguments:
-   1. The PDF file which contains the flash cards
-   2. The name you wish the deck to have.
-2. Import the .apkg file into Anki
-3. Study
+    1. The PDF file which contains the flash cards
+    2. The name you wish the deck to have.
+ 2. Import the .apkg file into Anki
+ 3. Study
 
-## Credits:
+## Credits
 
-- Icon in logo: https://www.flaticon.com/free-icon/script_708922
-- genanki (library to create anki cards in python): https://github.com/kerrickstaley/genanki
-- pdfrw great pdf library: https://pypi.org/project/pdfrw/
+  - Icon in logo: https://www.flaticon.com/free-icon/script_708922
+  - genanki (library to create anki cards in python): https://github.com/kerrickstaley/genanki
+  - pdfrw great pdf library: https://pypi.org/project/pdfrw/
